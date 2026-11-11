@@ -1,0 +1,89 @@
+# ClassicShop config. Items and categories live in shop.yml (managed with /shop commands).
+
+# Shown before every price.
+currency-symbol: "$"
+
+# Title of the main category menu.
+menu-title: "&8Shop"
+
+# Category used by /shop addhanditem when you don't name one.
+default-category: "misc"
+
+# Quick buy for players who haven't picked a setting yet (they change it with /shop quickbuy).
+# On: left-click an item in a category to buy 1, shift-left-click to buy a stack.
+quickbuy-default: false
+
+# Click/purchase sounds.
+sounds: true
+
+# The /sell menu.
+sell:
+  # Flat sell price: every item sells for this amount each, whether or not it is in the shop.
+  # Set to 0 (or -1) to turn it off and use each item's own sell price from the shop instead.
+  # This only affects /sell; the sell buttons inside /shop always use the item's own sell price.
+  flat-sell-price: 1
+
+  # Title of the /sell menu.
+  title: "&8Sell Items"
+
+  # true: closing the menu sells everything sellable inside it (items that can't be sold are handed back).
+  # false: closing the menu just hands everything back; players must click the Sell button.
+  sell-on-close: true
+
+  # Stops creative-mode players from selling items they spawned in.
+  block-creative: true
+
+messages:
+  prefix: "&8[&aShop&8] &7"
+
+  # /sell
+  sell-creative-blocked: "&cYou can't use /sell in creative mode."
+  sell-nothing-sellable: "&cNothing in the menu can be sold."
+  sell-sold: "&aSold &f{count} &aitems for &f{price}&a."
+  sell-returned: "&7Returned &f{count} &7items that can't be sold."
+
+  # General
+  no-permission: "&cYou don't have permission to do that."
+  players-only: "&cOnly players can use that."
+  unknown-subcommand: "&cUnknown category or subcommand. Try &f/shop help&c."
+  no-economy: "&cNo economy is set up on this server. Tell an admin."
+  reloaded: "&aShop reloaded."
+
+  # Quick buy
+  quickbuy-on: "&aQuick buy is on. &7Left-click buys 1, shift-click buys a stack, right-click opens the amount screen."
+  quickbuy-off: "&eQuick buy is off. &7Clicking an item opens the amount screen."
+  usage-quickbuy: "&cUsage: &f/shop quickbuy [on|off]"
+
+  # Buying and selling
+  not-buyable: "&cThat item can't be bought."
+  not-sellable: "&cThat item can't be sold."
+  not-enough-money: "&cYou need &f{price} &cto buy that."
+  no-space: "&cNot enough inventory space (room for &f{room}&c)."
+  not-enough-items: "&cYou only have &f{have} &cof that (tried to sell &f{amount}&c)."
+  nothing-to-sell: "&cYou don't have any of that item."
+  transaction-failed: "&cThe transaction failed. Try again."
+  item-removed: "&cThat item is no longer in the shop."
+  bought: "&aBought &f{amount}x {item} &afor &f{price}&a."
+  sold: "&aSold &f{amount}x {item} &afor &f{price}&a."
+
+  # Admin
+  usage-addhanditem: "&cUsage: &f/shop addhanditem <price> <sell price> [category] &7(-1 disables buying or selling)"
+  usage-addcategory: "&cUsage: &f/shop addcategory <id> [icon] [display name]"
+  usage-removecategory: "&cUsage: &f/shop removecategory <id> [confirm]"
+  hold-item: "&cHold the item in your main hand first."
+  invalid-price: "&cInvalid price. Use a number like &f100&c, &f1.5k&c, &f2m&c, or &f-1 &cto disable."
+  both-disabled: "&cBuy price and sell price can't both be -1."
+  edit-need-one-side: "&cAn item needs at least one of buying or selling enabled."
+  unknown-category: "&cThere is no category called &f{category}&c. Create it with &f/shop addcategory {category}&c."
+  item-added: "&aAdded &f{item} &ato &f{category}&a. Buy: &f{buy}&a, Sell: &f{sell}&a."
+  item-updated: "&aUpdated &f{item} &ain &f{category}&a. Buy: &f{buy}&a, Sell: &f{sell}&a."
+  warn-exploit: "&eWarning: the sell price is higher than the buy price, so players can make unlimited money."
+  item-not-in-shop: "&cThat item isn't in the shop."
+  item-deleted: "&aRemoved &f{item} &afrom &f{category}&a."
+  invalid-category-id: "&cCategory ids can only use a-z, 0-9, _ and - (max 24 characters)."
+  invalid-icon: "&c&f{icon} &cisn't a valid item for an icon."
+  category-exists: "&cThe category &f{category} &calready exists."
+  category-limit: "&cYou can have at most &f{max} &ccategories."
+  category-added: "&aCreated category &f{category}&a."
+  category-not-empty: "&cCategory &f{category} &chas &f{count} &citems. Run &f/shop removecategory {category} confirm &cto delete it anyway."
+  category-removed: "&aRemoved category &f{category}&a."

@@ -1,0 +1,25 @@
+name: ClassicShop
+version: '1.2.0'
+main: dev.classicshop.ClassicShop
+api-version: '1.21'
+description: Category based /shop (quick buy, operator price editor) and a /sell menu, powered by Vault.
+depend: [Vault]
+
+commands:
+  shop:
+    description: Open the shop, toggle quick buy, or manage it (admins).
+    usage: /<command> [category|quickbuy|help]
+  sell:
+    description: Open the sell menu.
+    usage: /<command>
+
+permissions:
+  classicshop.use:
+    description: Open the shop, buy/sell items and use /shop quickbuy.
+    default: true
+  classicshop.sell:
+    description: Use /sell.
+    default: true
+  classicshop.admin:
+    description: Add/remove/edit shop items and categories, reload the shop.
+    default: op
